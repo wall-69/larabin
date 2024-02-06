@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Consolas", monospace;
+    }
+    a,
+    button {
+        @apply hover:opacity-100 opacity-75;
+        @apply disabled:hover:cursor-not-allowed disabled:opacity-50;
+    }
+    #app {
+        @apply flex flex-col min-h-screen;
+    }
+}

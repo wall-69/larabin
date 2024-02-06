@@ -1,18 +1,10 @@
 <?php
 
+use App\Http\Controllers\PasteController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(PasteController::class)->group(function () {
+    Route::get('/', "index")->name("home");
+    Route::post('/', "store")->name("home");
+    Route::get('/{paste}', "show")->name("show");
 });
