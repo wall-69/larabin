@@ -26,6 +26,5 @@ class PasteController extends Controller
         $paste = Paste::create($data);
 
         return redirect(route("show", ["paste" => $paste]));
-        // return route("show", ["paste" => $paste]);
     }
 }
